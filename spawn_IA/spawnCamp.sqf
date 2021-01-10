@@ -15,7 +15,7 @@ switch true do {
 		};
 		case (nbJoueurs > 17 && nbJoueurs < 20): {
 			//Entre 20 et 28 pax en garnison
-			_grpGarn = GROUPE_BLUFOR_MOYEN;
+			_grpGarn = GROUPE_BLUFOR_PETIT;
 			//Entre 8 et 20 pax en patrouille
 			_nbPat = [2,3];
 			//Proba arme fixe occupée au départ 
@@ -23,7 +23,7 @@ switch true do {
 		};
 		case (nbJoueurs > 19): {
 			//Entre 32 et 40 pax en garnison
-			_grpGarn = GROUPE_BLUFOR_GRAND;
+			_grpGarn = GROUPE_BLUFOR_PETIT;
 			//Entre 10 et 24 pax en patrouille
 			_nbPat = [3,4];
 			//Proba arme fixe occupée au départ 
@@ -36,6 +36,7 @@ switch true do {
 
 //Spawn des garnisons
 [_zn,_grpGarn, blufor, nil, nil, 0.1, 0.7] spawn int_fnc_spawnGarnisons;
+//[_zn,GROUPE_BLUFOR_GRAND, blufor, nil, nil, 0.1, 0.7] spawn int_fnc_spawnGarnisons;
 
 //Spawn des armes fixes
 [_zn,blufor,"RHS_M2StaticMG_D","rhsusf_army_ucp_rifleman",1,_probaManedFW,0.8] spawn int_fnc_spawnFixedWeapons;

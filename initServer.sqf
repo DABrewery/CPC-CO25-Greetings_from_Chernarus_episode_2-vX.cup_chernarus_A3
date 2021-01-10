@@ -17,40 +17,57 @@ gdc_plutoDebug = false;
 //On adapte le nombre d'hostiles par rapport au nombre de joueurs
 nbJoueurs = playersNumber east;
 
+/* Group definition */
+	private _fsl    = "rhsusf_army_ucp_rifleman";
+	private _lat    = "rhsusf_army_ucp_riflemanat";
+	private _aa     = "rhsusf_army_ucp_aa";
+	private _at     = "rhsusf_army_ucp_maaws" ;
+	private _ass_at = "rhsusf_army_ucp_riflemanat";
+	private _lmg    = "rhsusf_army_ucp_autorifleman";
+	private _mg     = "rhsusf_army_ucp_machinegunner";
+	private _ass_mg = "rhsusf_army_ucp_machinegunnera";
+	private _gl     = "rhsusf_army_ucp_grenadier";
+	private _tl     = "rhsusf_army_ucp_teamleader";
+	private _sl     = "rhsusf_army_ucp_squadleader";
+	private _medic  = "rhsusf_army_ucp_medic";
+
+// 2 à 4 pax
 GROUPE_BLUFOR_PETIT = [
-	["rhs_vmf_flora_junior_sergeant","rhs_vmf_flora_LAT","rhs_vmf_flora_rifleman","rhs_vmf_flora_rifleman"],
-	["rhs_vmf_flora_junior_sergeant","rhs_vmf_flora_grenadier","rhs_vmf_flora_LAT","rhs_vmf_flora_rifleman"],
-	["rhs_vmf_flora_junior_sergeant","rhs_vmf_flora_machinegunner","rhs_vmf_flora_machinegunner_assistant","rhs_vmf_flora_LAT"]
+	[_tl, _fsl, _aa],
+	[_tl, _lat, _aa],
+	[_tl, _lmg, _aa],
+	[_tl, _gl, _aa],
+	[_tl, _lat, _fsl, _aa],
+	[_tl, _lmg, _fsl, _aa],
+	[_tl, _gl, _lmg , _aa],
+	[_tl, _mg, _ass_mg, _aa]
 ];
 
-// Groupes Ukraine
+// 6 pax
 GROUPE_BLUFOR_MOYEN = [
-	["rhs_vmf_flora_sergeant", "rhs_vmf_flora_LAT","rhs_vmf_flora_LAT", "rhs_vmf_flora_rifleman", "rhs_vmf_flora_machinegunner_assistant"],
-	["rhs_vmf_flora_machinegunner", "rhs_vmf_flora_grenadier","rhs_vmf_flora_medic"]
+	[_tl, _lat, _lmg, _gl, _fsl, _fsl],
+	[_tl, _lat, _mg, _ass_mg, _fsl, _fsl]
 ];
 
-// Groupes Ukraine
+// 9 à 10 pax
 GROUPE_BLUFOR_GRAND = [
-	["rhs_vmf_flora_officer","rhs_vmf_flora_medic", "rhs_vmf_flora_sergeant","rhs_vmf_flora_LAT", "rhs_vmf_flora_rifleman", "rhs_vmf_flora_rifleman", "rhs_vmf_flora_junior_sergeant","rhs_vmf_flora_machinegunner","rhs_vmf_flora_machinegunner_assistant","rhs_vmf_flora_grenadier","rhs_vmf_flora_junior_sergeant","rhs_vmf_flora_LAT","rhs_vmf_flora_rifleman","rhs_vmf_flora_rifleman"]
-];
-
-// Groupes de 6
-GROUPE_BLUFOR_PETIT_US = [
-	["rhsusf_army_ucp_officer","rhsusf_army_ucp_maaws", "rhsusf_army_ucp_rifleman","rhsusf_army_ucp_machinegunner","rhsusf_army_ucp_rifleman","rhsusf_army_ucp_rifleman"]
-];
-
-// Groupes de 10
-GROUPE_BLUFOR_MOYEN_US = [
-	["rhsusf_army_ucp_officer","rhsusf_army_ucp_rifleman", "rhsusf_army_ucp_rifleman","rhsusf_army_ucp_rifleman", "rhsusf_army_ucp_rifleman",
-	 "rhsusf_army_ucp_maaws", "rhsusf_army_ucp_maaws","rhsusf_army_ucp_machinegunner","rhsusf_army_ucp_rifleman","rhsusf_army_ucp_rifleman"]
-];
-
-// Groupes de 15
-GROUPE_BLUFOR_GRAND_US = [
-	["rhsusf_army_ucp_officer","rhsusf_army_ucp_rifleman", "rhsusf_army_ucp_rifleman","rhsusf_army_ucp_rifleman", "rhsusf_army_ucp_rifleman",
-	 "rhsusf_army_ucp_maaws", "rhsusf_army_ucp_maaws","rhsusf_army_ucp_machinegunner","rhsusf_army_ucp_rifleman","rhsusf_army_ucp_rifleman",
-	 "rhsusf_army_ucp_rifleman","rhsusf_army_ucp_rifleman","rhsusf_army_ucp_rifleman","rhsusf_army_ucp_rifleman","rhsusf_army_ucp_aa"]
+	[_sl, _tl, _lat, _lmg, _gl, _tl, _fsl, _fsl, _fsl],
+	[_sl, _tl, _mg, _ass_mg, _lat, _tl, _lmg, _fsl, _fsl],
+	[_sl, _tl, _medic, _mg, _ass_mg, _lat, _tl, _lmg, _fsl, _fsl]
 ];
 
 //Spawn des hostiles
-//execVM "spawn_IA\spawnCamp.sqf";
+execVM "spawn_IA\spawnCamp.sqf";
+
+//Spawn des mecha
+[] spawn {
+	sleep 600 + random 300;
+	//sleep 10;
+	private _grp = selectRandom GROUPE_BLUFOR_MOYEN;
+	[["mrkMechSpawn_1","mrkMechUnload_1","mrkMechSAD_1"], blufor, _grp, "RHS_M2A2_wd",18] call int_fnc_spawnMechInfantry;
+	_grp = selectRandom GROUPE_BLUFOR_MOYEN;
+	[["mrkMechSpawn_2","mrkMechUnload_2","mrkMechSAD_2"], blufor, _grp, "RHS_M2A2_wd",43] call int_fnc_spawnMechInfantry;
+	_tbMech_3 = [getMarkerPos "mrkMechSpawn_3", 42, "RHS_M6_wd", west] call BIS_fnc_spawnVehicle;
+	_wp = _tbMech_3#2 addWaypoint [getMarkerPos "mrkMechUnload_3", 0];
+	_wp setWaypointType "MOVE";
+};
