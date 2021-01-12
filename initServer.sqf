@@ -17,6 +17,11 @@ gdc_plutoDebug = false;
 //On adapte le nombre d'hostiles par rapport au nombre de joueurs
 nbJoueurs = playersNumber east;
 
+//Cargo des blindés
+[bmp_1, "cargo_bmp"] call int_fnc_cargoVehicle;
+[bmp_2, "cargo_bmp"] call int_fnc_cargoVehicle;
+[mbt, "cargo_mbt"] call int_fnc_cargoVehicle;
+
 /* Group definition */
 	private _fsl    = "rhsusf_army_ucp_rifleman";
 	private _lat    = "rhsusf_army_ucp_riflemanat";

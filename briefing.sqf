@@ -31,20 +31,23 @@ player createDiaryRecord ["Diary", ["Equipement", "
 
 Selon l'état-major, votre section d'infanterie mécanisée de la MSV dispose de moyens adaptés.<br/><br/>
 
-<font color='#ff8205'>Blindés</font color><br/>
+<font color='#82ff05'>Blindés</font color><br/>
 > MBT : un T-90 obr. 2016<br/>
 > 2 BMP-2K<br/><br/>
 
-<font color='#ff8205'>Support aérien</font color><br/>
+<font color='#82ff05'>Réparations</font color><br/>
+Les équipages de blindés peuvent faire un nombre de réparations limitées (5). Les chef de bord sont plus compétents pour les réparations.<br/><br/>
+
+<font color='#82ff05'>Support aérien</font color><br/>
 Vous disposez d'un support aérien Mi-48 Kajman (via SSS). Vous ne disposez que d'un hélico.<br/>
 Bien qu'il soit résistant, ne l'engagez pas n'importe comment : il y a des AA parmi les survivants et surtout un Linebacker qui va arriver sur zone. Les MBT constituent également un danger important.<br/><br/>
 
-<font color='#ff8205'>Armement des fantassins</font color><br/>
+<font color='#82ff05'>Armement des fantassins</font color><br/>
 > Fusiliers : AK-74 + PK-AS<br/>
 > MG : PKP<br/>
 > AT : RPG-7V2 + PGO-7V3. En munitions : OG-7V x 2 et PG-7VL x 2<br/><br/>
 
-<font color='#ff8205'>Communications</font color><br/>
+<font color='#82ff05'>Communications</font color><br/>
 > 148 pour le CdO, l'OA et les TL<br/>
 > 343 pour tous les hommes<br/><br/>
 
@@ -57,9 +60,12 @@ player createDiaryRecord ["Diary", ["Renseignements", "
 Une douzaine d'hommes, avec une ou deux armes lourdes, quelques AT (sûrement des M136) et probablement des lanceurs AA portables.<br/><br/>
 
 <font color='#ff0505'>Escadron blindé</font color><br/>
-Deux MBT (M1A1 'Abrams'), deux IFV (M2A2 'Bradley') et un blindé anti-aérien (M6 'Bradley Linebacker').<br/>
-Les Abrams ont pris les devants et sont déjà sur zone ou le seront dans quelques minutes. On pense qu'ils vont prendre position sur <marker name ='zone_mbt_1'>cette zone</marker> pour le premier et sur <marker name ='zone_mbt_2'>cette zone</marker> pour le second.<br/>
-Les 3 Bradley foncent vers la zone. On pense qu'ils atteindront Pustochka d'ici 10 à 15 minutes et pousseront sur Vybor.<br/>
+Deux MBT (M1A1 'Abrams'), deux IFV (M2A2 'Bradley') et un blindé anti-aérien (M6 'Bradley Linebacker').<br/><br/>
+
+Les Abrams ont pris les devants et sont déjà sur zone ou le seront dans quelques minutes. On pense qu'ils vont prendre position sur <marker name ='zone_mbt_1'>cette zone</marker> pour le premier et sur <marker name ='zone_mbt_2'>cette zone</marker> pour le second.<br/><br/>
+
+Les 3 Bradley foncent vers la zone. On pense qu'ils atteindront Pustochka d'ici 10 à 15 minutes et pousseront sur Vybor.<br/><br/>
+
 Etant donné la topographie, le Linebacker prendra sûrement position dans <marker name ='zone_aa_1'>cette zone</marker>.
 
 "]];
