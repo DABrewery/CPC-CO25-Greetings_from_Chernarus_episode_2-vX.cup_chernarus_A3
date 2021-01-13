@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=40;
+		nextID=42;
 	};
 	class Camera
 	{
@@ -276,7 +276,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -331,7 +331,7 @@ class CustomAttributes
 		};
 		nAttributes=1;
 	};
-	class Category2
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -4407,7 +4407,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4534.3711,339.01315,9860.3838};
-						angles[]={-0,3.0883601,0.0026294757};
+						angles[]={0,3.0883601,0.0026294757};
 					};
 					side="East";
 					flags=4;
@@ -4524,7 +4524,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4535.4604,339.06601,9834.2148};
-						angles[]={-0,3.0782371,0.0026744273};
+						angles[]={0,3.0782371,0.0026744273};
 					};
 					side="East";
 					flags=4;
