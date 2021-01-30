@@ -17,6 +17,7 @@ switch (_cargo) do {
 	//Cargo des BMP
 	case "cargo_bmp": {
 		_veh addItemCargoGlobal ["Toolkit", 5];
+		_veh addBackpackCargoGlobal ["rhs_sidor", 5];
 		_veh addMagazineCargoGlobal ["rhs_100Rnd_762x54mmR", 10];
 		_veh addMagazineCargoGlobal ["rhs_mag_9x19_17", 20];
 		_veh addMagazineCargoGlobal ["rhs_30Rnd_545x39_7N6_AK", 50];
@@ -33,5 +34,6 @@ switch (_cargo) do {
 	//Cargo du T-90
 	case "cargo_mbt": {
 		_veh addItemCargoGlobal ["Toolkit", 5];
+		_veh addBackpackCargoGlobal ["rhs_sidor", 5];
 	};
 };

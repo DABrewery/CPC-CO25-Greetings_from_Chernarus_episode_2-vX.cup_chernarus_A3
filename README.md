@@ -1,4 +1,3 @@
 # a3_mission_template
-tanin69's default mission template for Arma 3 video game
-
-Please, see the wiki to read what has been documented so far
+v1 : initial release
+v2 : added backpack to vehicle cargo
